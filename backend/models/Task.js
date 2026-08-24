@@ -5,7 +5,12 @@ const TaskSchema = new mongoose.Schema({
     description: String,
     assignedTo: String,
     role: String,
+    domain: {
+        type: String,
+        default: "General"
+    },
     createdBy: String,
+    createdByRole: String,
     status: {
         type: String,
         default: "Pending"
