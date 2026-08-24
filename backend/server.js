@@ -36,6 +36,8 @@ app.use("/api/tasks", (req, res, next) => {
     next();
 }, taskRoutes);
 // start server
-app.listen(7000, () => {
-    console.log("Server running on port 7000");
+const PORT = 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });

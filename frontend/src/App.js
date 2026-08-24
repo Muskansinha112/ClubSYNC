@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   const fetchTasks = async () => {
-    const res = await fetch("http://localhost:7000/api/tasks");
+    const res = await fetch("http://localhost:5000/api/tasks");
     const data = await res.json();
     setTasks(data);
   };
@@ -27,7 +27,7 @@ function App() {
   const addTask = async () => {
     if (!title || !assignedTo || !role || !createdBy) return;
 
-    await fetch("http://localhost:7000/api/tasks", {
+    await fetch("http://localhost:5000/api/tasks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -52,7 +52,7 @@ function App() {
   };
 
   const markComplete = async (id) => {
-    await fetch(`http://localhost:7000/api/tasks/${id}`, {
+    await fetch(`http://localhost:5000/api/tasks/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: "Completed" })
@@ -66,7 +66,7 @@ function App() {
   };
 
   const confirmDelete = async () => {
-    await fetch(`http://localhost:7000/api/tasks/${taskToDelete}`, {
+    await fetch(`http://localhost:5000/api/tasks/${taskToDelete}`, {
       method: "DELETE"
     });
     fetchTasks();
