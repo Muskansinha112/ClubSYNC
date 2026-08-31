@@ -29,12 +29,13 @@ app.get("/test", (req, res) => {
     res.send("Test working");
 });
 
- const taskRoutes = require("./routes/taskRoutes");
+const taskRoutes = require("./routes/taskRoutes");
+const clubRoutes = require("./routes/clubRoutes");
+const eventRoutes = require("./routes/eventRoutes");
 
-app.use("/api/tasks", (req, res, next) => {
-    console.log("🔥 /api/tasks route accessed");
-    next();
-}, taskRoutes);
+app.use("/api/tasks", taskRoutes);
+app.use("/api/clubs", clubRoutes);
+app.use("/api/events", eventRoutes);
 // start server
 const PORT = process.env.PORT || 5001;
 

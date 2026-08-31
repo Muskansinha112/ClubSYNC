@@ -9,6 +9,14 @@ const TaskSchema = new mongoose.Schema({
         type: String,
         default: "General"
     },
+    clubName: {
+        type: String,
+        default: "Coding Club"
+    },
+    eventName: {
+        type: String,
+        default: "General Operations"
+    },
     createdBy: String,
     createdByRole: String,
     status: {
